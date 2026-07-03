@@ -312,7 +312,7 @@ analyzeBtn.disabled = true;
 
 try {
 
-    const response = await fetch("http://localhost:3001/analyze", {
+    const response = await fetch("https://reviewsense-ai-2x4x.onrender.com/analyze", {
 
         method: "POST",
 

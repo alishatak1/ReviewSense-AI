@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewSense AI | Product Feedback Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>ReviewSense AI</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#analyzer">Analyzer</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Customer Reviews into Actionable Product Insights</h1> 
+            <p>
+            Analyze customer feedback using AI to identify recurring issues,
+            discover valuable insights, and prioritize product improvements
+            through an interactive dashboard.
+            </p>
+            <a href="#analyzer" class="btn">Analyze Reviews</a>
+        </div>
+    </section>
+    <!-- Analyzer Section -->
+    <section id="analyzer" class="analyzer">
+        <div class="section-title">
+            <h2>Analyze Customer Reviews</h2>
+            <p>
+                Paste reviews from Google Play Store, Amazon, Swiggy,
+                Zomato, or any other platform and let AI analyze them.
+            </p>
+        </div>
+        <div class="analyzer-container">
+            <textarea
+    id="reviewInput"
+    placeholder="Paste your customer reviews here...">
+</textarea>
+
+<div class="button-group">
+
+    <button id="loadDemoBtn">
+        📄 Load Demo Reviews
+    </button>
+    <button id="uploadBtn">
+        📁 Upload CSV
+    </button>
+
+    <button id="analyzeBtn">
+        🤖 Analyze Reviews
+    </button>
+    <p id="loadingText" style="display:none;">
+    🤖 AI is analyzing reviews...
+</p>
+
+</div>
+<input
+    type="file"
+    id="csvFile"
+    accept=".csv"
+    hidden
+>
+
+<p class="input-note">
+    Supported Sources:
+    Google Play • Amazon • Flipkart • Swiggy • Zomato
+</p>
+        </div>
+    </section>
+    <!-- Dashboard Section -->
+
+<section id="dashboard" class="dashboard">
+
+    <div class="section-title">
+
+        <h2>Analysis Dashboard</h2>
+
+        <p>
+            AI-generated insights from customer reviews will appear here.
+        </p>
+
+    </div>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h3>Total Reviews</h3>
+            <p id="totalReviews">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Themes Found</h3>
+            <p id="themesFound">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Top Pain Points</h3>
+            <p id="painPoints">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Feature Suggestions</h3>
+            <p id="featureCount">0</p>
+        </div>
+        <div class="card">
+    <h3>😊 Positive Reviews</h3>
+    <p id="positiveReviews">0</p>
+</div>
+
+<div class="card">
+    <h3>😐 Neutral Reviews</h3>
+    <p id="neutralReviews">0</p>
+</div>
+
+<div class="card">
+    <h3>😞 Negative Reviews</h3>
+    <p id="negativeReviews">0</p>
+</div>
+
+    </div>
+
+</section>
+<!-- Theme Analysis Section -->
+
+<section id="themes" class="themes">
+
+    <div class="section-title">
+        <h2>Theme Analysis</h2>
+        <p>
+            AI categorizes reviews into common themes based on customer feedback.
+        </p>
+    </div>
+
+    <div class="theme-grid" id="themeGrid">
+
+</div>
+
+</section>
+
+<!-- AI Analysis Section -->
+<section id="aiAnalysis" class="ai-analysis">
+
+    <div class="section-title">
+        <h2>🤖 AI Product Analysis</h2>
+        <p>Gemini AI summarizes customer feedback into actionable insights.</p>
+    </div>
+
+    <div class="ai-container">
+
+        <div class="ai-card">
+            <h3>📌 Top Pain Points</h3>
+            <ul id="painPointList"></ul>
+        </div>
+
+        <div class="ai-card">
+            <h3>💡 Suggested Features</h3>
+            <ul id="featureList"></ul>
+        </div>
+
+        <div class="ai-card full-width">
+            <h3>📝 Product Brief</h3>
+            <p id="productBrief">
+                AI summary will appear here after analysis.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section class="charts">
+
+    <div class="section-title">
+        <h2>📊 Analytics Dashboard</h2>
+        <p>Visual insights generated from customer reviews.</p>
+    </div>
+
+    <div class="chart-container">
+
+        <div class="chart-card">
+            <canvas id="sentimentChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <canvas id="themeChart"></canvas>
+        </div>
+
+    </div>
+
+</section>
+</body>
+</html>

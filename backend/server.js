@@ -13,7 +13,9 @@ app.use(express.json());
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
 });
-
+app.get("/", (req, res) => {
+    res.send("✅ ReviewSense AI Backend is Running");
+});
 app.post("/analyze", async (req, res) => {
 
     try {
